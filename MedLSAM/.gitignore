@@ -1,0 +1,42 @@
+# Ignore Python compiled files
+*.pyc
+*.pyo
+*.pyd
+__pycache__
+
+# Ignore log files
+*.log
+
+# Ignore pth files
+*.pth
+
+# Ignore all the files in result
+result/*
+
+# Ignore all the files in config/my_test_config
+config/my_test_config/*
+config/my_test_data/*
+
+# Ignore all the comparison methods
+comparison_methods
+
+# Ignore result_analysis code
+result_analysis
+
+# Ignore abnormal analysis code
+MedLAM_abnormal_Inference.py
+MedSAM_Inference_total.py
+
+# Ignore data_process code
+data_process/FLARE23_transfer_label.py
+data_process/Create_file_ls.py
+data_process/transfer_nndet_result.py
+data_process/Cal_Totalseg_val.py
+data_process/FLARE23_transfer_label.py
+data_process/Stoca_Totalseg_val.py
+data_process/file_to_organs.json
+data_process/totalseg_class_list.json
+data_process/Totalseg_transfer_label.py
+
+# Ignore nnDet_WPL_Inference code
+nnDet_WPL_Inference.py

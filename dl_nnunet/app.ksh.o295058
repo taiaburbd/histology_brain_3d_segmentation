@@ -1,0 +1,31 @@
+REMAINING: 1
+Taking GPU #1
+Starter begin : webern54.u-bourgogne.fr(214231)
+Mon Mar 11 17:29:50 CET 2024
+Version CentOS : 7.7
+Starter(214231): PATH=/usr/ccub/sge/scripts:/tmp3/295058.1.gpu:/soft/c7/python/3.10/anaconda/2023.03/bin:/soft/c7/spack/0.18.0/packages/linux-centos7-haswell/gcc/11.2.0/gcc/4.8.5/g75x5bhqcqxorvp32f6vs2h3e4vb7tpm/bin:/user1/ngmm/tr855969/.vscode-server/bin/1e790d77f81672c49be070e04474901747115651/bin/remote-cli:/usr/lib64/qt-3.3/bin:/soft/c7/modules/4.1.2/bin:/usr/ccub/sge-8.1.8/bin:/usr/ccub/sge-8.1.8/bin/lx-amd64:/user1/ngmm/tr855969/bin:/bin:/usr/bin:/usr/sbin:/etc:/usr/ccub/bin:/usr/local/bin:/user1/ngmm/tr855969/bin:.:/opt/dell/srvadmin/bin
+Starter exec(214231) : '/usr/ccub/sge-8.1.8/ccub/spool/webern54/job_scripts/295058'
+Starting my shell script
+
+CommandNotFoundError: Your shell has not been properly configured to use 'conda activate'.
+To initialize your shell, run
+
+    $ conda init <SHELL_NAME>
+
+Currently supported shells are:
+  - bash
+  - fish
+  - tcsh
+  - xonsh
+  - zsh
+  - powershell
+
+See 'conda init --help' for more information and options.
+
+IMPORTANT: You may need to close and restart your shell after running 'conda init'.
+
+
+/usr/ccub/sge-8.1.8/ccub/spool/webern54/job_scripts/295058: line 24: nnUNetv2_train: command not found
+Ending the shell script_second
+Starter(214231): Return code=0
+Starter end(214231)

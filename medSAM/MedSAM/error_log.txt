@@ -1,0 +1,16 @@
+/soft/c7/python/3.9/anaconda/2022.05/pytorch/1.11.0/cuda/11.3.1/lib/python3.9/site-packages/torchvision/io/image.py:13: UserWarning: Failed to load image Python extension: libtorch_cuda_cu.so: cannot open shared object file: No such file or directory
+  warn(f"Failed to load image Python extension: {e}")
+Traceback (most recent call last):
+  File "/beegfs/data/work/shared/ngmm/scripts/Taiabur/medSAM/MedSAM/MedSAM_Inference.py", line 107, in <module>
+    img_np = io.imread(args.data_path)
+  File "/user1/ngmm/tr855969/.local/lib/python3.9/site-packages/skimage/io/_io.py", line 53, in imread
+    img = call_plugin('imread', fname, plugin=plugin, **plugin_args)
+  File "/user1/ngmm/tr855969/.local/lib/python3.9/site-packages/skimage/io/manage_plugins.py", line 205, in call_plugin
+    return func(*args, **kwargs)
+  File "/user1/ngmm/tr855969/.local/lib/python3.9/site-packages/skimage/io/_plugins/imageio_plugin.py", line 11, in imread
+    out = np.asarray(imageio_imread(*args, **kwargs))
+  File "/user1/ngmm/tr855969/.local/lib/python3.9/site-packages/imageio/v3.py", line 53, in imread
+    with imopen(uri, "r", **plugin_kwargs) as img_file:
+  File "/user1/ngmm/tr855969/.local/lib/python3.9/site-packages/imageio/core/imopen.py", line 223, in imopen
+    raise err_type(err_msg)
+OSError: ImageIO does not generally support reading folders. Limited support may be available via specific plugins. Specify the plugin explicitly using the `plugin` kwarg, e.g. `plugin='DICOM'`

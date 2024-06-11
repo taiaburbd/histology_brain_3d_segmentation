@@ -1,0 +1,87 @@
+REMAINING: 1
+Taking GPU #0
+Starter begin : webern54.u-bourgogne.fr(279975)
+Thu May 23 17:46:23 CEST 2024
+Version CentOS : 7.7
+Starter(279975): PATH=/usr/ccub/sge/scripts:/tmp3/9773081.1.gpu:/user1/ngmm/tr855969/.conda/envs/env_tf/bin:/soft/c7/python/3.9/anaconda/2022.05/pytorch/1.11.0/cuda/11.3.1/condabin:/user1/ngmm/tr855969/.vscode-server/cli/servers/Stable-dc96b837cf6bb4af9cd736aa3af08cf8279f7685/server/bin/remote-cli:/soft/c7/python/3.9/anaconda/2022.05/pytorch/1.11.0/cuda/11.3.1/bin:/usr/lib64/qt-3.3/bin:/soft/c7/modules/4.1.2/bin:/usr/ccub/sge-8.1.8/bin:/usr/ccub/sge-8.1.8/bin/lx-amd64:/user1/ngmm/tr855969/bin:/bin:/usr/bin:/usr/sbin:/etc:/usr/ccub/bin:/usr/local/bin:/user1/ngmm/tr855969/bin:.
+Starter exec(279975) : '/usr/ccub/sge-8.1.8/ccub/spool/webern54/job_scripts/9773081'
+Now using bash
+Starting my shell script
+/user1/ngmm/tr855969/.conda/envs/env_tf/lib/python3.10/site-packages/torch/optim/lr_scheduler.py:28: UserWarning: The verbose parameter is deprecated. Please use get_last_lr() to access the learning rate.
+  warnings.warn("The verbose parameter is deprecated. Please use get_last_lr() "
+Using device: cuda:0
+
+#######################################################################
+Please cite the following paper when using nnU-Net:
+Isensee, F., Jaeger, P. F., Kohl, S. A., Petersen, J., & Maier-Hein, K. H. (2021). nnU-Net: a self-configuring method for deep learning-based biomedical image segmentation. Nature methods, 18(2), 203-211.
+#######################################################################
+
+
+This is the configuration used by this training:
+Configuration name: 3d_fullres
+ {'data_identifier': 'nnUNetPlans_3d_fullres', 'preprocessor_name': 'DefaultPreprocessor', 'batch_size': 2, 'patch_size': [112, 224, 80], 'median_image_size_in_voxels': [398.0, 794.5, 308.0], 'spacing': [1.0, 1.0, 1.0], 'normalization_schemes': ['ZScoreNormalization'], 'use_mask_for_norm': [False], 'resampling_fn_data': 'resample_data_or_seg_to_shape', 'resampling_fn_seg': 'resample_data_or_seg_to_shape', 'resampling_fn_data_kwargs': {'is_seg': False, 'order': 3, 'order_z': 0, 'force_separate_z': None}, 'resampling_fn_seg_kwargs': {'is_seg': True, 'order': 1, 'order_z': 0, 'force_separate_z': None}, 'resampling_fn_probabilities': 'resample_data_or_seg_to_shape', 'resampling_fn_probabilities_kwargs': {'is_seg': False, 'order': 1, 'order_z': 0, 'force_separate_z': None}, 'architecture': {'network_class_name': 'dynamic_network_architectures.architectures.unet.PlainConvUNet', 'arch_kwargs': {'n_stages': 6, 'features_per_stage': [32, 64, 128, 256, 320, 320], 'conv_op': 'torch.nn.modules.conv.Conv3d', 'kernel_sizes': [[3, 3, 3], [3, 3, 3], [3, 3, 3], [3, 3, 3], [3, 3, 3], [3, 3, 3]], 'strides': [[1, 1, 1], [2, 2, 2], [2, 2, 2], [2, 2, 2], [2, 2, 2], [1, 2, 1]], 'n_conv_per_stage': [2, 2, 2, 2, 2, 2], 'n_conv_per_stage_decoder': [2, 2, 2, 2, 2], 'conv_bias': True, 'norm_op': 'torch.nn.modules.instancenorm.InstanceNorm3d', 'norm_op_kwargs': {'eps': 1e-05, 'affine': True}, 'dropout_op': None, 'dropout_op_kwargs': None, 'nonlin': 'torch.nn.LeakyReLU', 'nonlin_kwargs': {'inplace': True}, 'deep_supervision': True}, '_kw_requires_import': ['conv_op', 'norm_op', 'dropout_op', 'nonlin']}, 'batch_dice': True} 
+
+These are the global plan.json settings:
+ {'dataset_name': 'Dataset002_HCFC1', 'plans_name': 'nnUNetPlans', 'original_median_spacing_after_transp': [1.0, 1.0, 1.0], 'original_median_shape_after_transp': [398, 794, 308], 'image_reader_writer': 'SimpleITKIO', 'transpose_forward': [0, 1, 2], 'transpose_backward': [0, 1, 2], 'experiment_planner_used': 'ExperimentPlanner', 'label_manager': 'LabelManager', 'foreground_intensity_properties_per_channel': {'0': {'max': 252.0, 'mean': 44.92946243286133, 'median': 41.0, 'min': 0.0, 'percentile_00_5': 0.0, 'percentile_99_5': 152.0, 'std': 21.759424209594727}}} 
+
+2024-05-23 17:47:49.013229: unpacking dataset...
+/user1/ngmm/tr855969/.conda/envs/env_tf/lib/python3.10/site-packages/torch/onnx/symbolic_helper.py:1515: UserWarning: ONNX export mode is set to TrainingMode.EVAL, but operator 'instance_norm' is set to train=True. Exporting with train=True.
+  warnings.warn(
+2024-05-23 17:47:55.537413: unpacking done...
+2024-05-23 17:47:55.541665: do_dummy_2d_data_aug: False
+2024-05-23 17:47:55.545353: Using splits from existing split file: /user1/ngmm/tr855969/Desktop/Taiabur/ngmm-nnunet/dataset/nnUNet_preprocessed/Dataset002_HCFC1/splits_final.json
+2024-05-23 17:47:55.585709: The split file contains 5 splits.
+2024-05-23 17:47:55.588775: Desired fold for training: 4
+2024-05-23 17:47:55.591673: This split has 10 training and 2 validation cases.
+2024-05-23 17:48:17.459842: 
+2024-05-23 17:48:17.463076: Epoch 687
+2024-05-23 17:48:17.466274: Current learning rate: 0.00352
+using pin_memory on device 0
+using pin_memory on device 0
+2024-05-23 17:51:04.450435: train_loss 2.3941
+2024-05-23 17:51:04.456283: val_loss 2.1756
+2024-05-23 17:51:04.460233: Pseudo dice [0.3326, 0.0, 0.2837, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0089, 0.0, 0.0136, 0.2284, 0.0]
+2024-05-23 17:51:04.477612: Epoch time: 166.99 s
+2024-05-23 17:51:04.490888: Yayy! New best EMA pseudo Dice: 0.0361
+2024-05-23 17:51:06.835768: 
+2024-05-23 17:51:06.839332: Epoch 688
+2024-05-23 17:51:06.842278: Current learning rate: 0.00351
+Traceback (most recent call last):
+  File "/user1/ngmm/tr855969/.conda/envs/env_tf/bin/nnUNetv2_train", line 8, in <module>
+    sys.exit(run_training_entry())
+  File "/beegfs/data/work/shared/ngmm/scripts/Taiabur/ngmm-nnunet/nnUNet/nnunetv2/run/run_training.py", line 268, in run_training_entry
+    run_training(args.dataset_name_or_id, args.configuration, args.fold, args.tr, args.p, args.pretrained_weights,
+  File "/beegfs/data/work/shared/ngmm/scripts/Taiabur/ngmm-nnunet/nnUNet/nnunetv2/run/run_training.py", line 204, in run_training
+    nnunet_trainer.run_training()
+  File "/beegfs/data/work/shared/ngmm/scripts/Taiabur/ngmm-nnunet/nnUNet/nnunetv2/training/nnUNetTrainer/nnUNetTrainer.py", line 1296, in run_training
+    self.on_validation_epoch_end(val_outputs)
+  File "/beegfs/data/work/shared/ngmm/scripts/Taiabur/ngmm-nnunet/nnUNet/nnunetv2/training/nnUNetTrainer/nnUNetTrainer.py", line 1039, in on_validation_epoch_end
+    self.logger.log('mean_fg_dice', mean_fg_dice, self.current_epoch)
+  File "/beegfs/data/work/shared/ngmm/scripts/Taiabur/ngmm-nnunet/nnUNet/nnunetv2/training/logging/nnunet_logger.py", line 50, in log
+    new_ema_pseudo_dice = self.my_fantastic_logging['ema_fg_dice'][epoch - 1] * 0.9 + 0.1 * value \
+IndexError: list index out of range
+Exception in thread Thread-5 (results_loop):
+Traceback (most recent call last):
+  File "/user1/ngmm/tr855969/.conda/envs/env_tf/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+Exception in thread Thread-4 (results_loop):
+Traceback (most recent call last):
+  File "/user1/ngmm/tr855969/.conda/envs/env_tf/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/user1/ngmm/tr855969/.conda/envs/env_tf/lib/python3.10/threading.py", line 953, in run
+    self.run()
+    self._target(*self._args, **self._kwargs)
+  File "/user1/ngmm/tr855969/.conda/envs/env_tf/lib/python3.10/threading.py", line 953, in run
+  File "/user1/ngmm/tr855969/.conda/envs/env_tf/lib/python3.10/site-packages/batchgenerators/dataloading/nondet_multi_threaded_augmenter.py", line 125, in results_loop
+    self._target(*self._args, **self._kwargs)
+  File "/user1/ngmm/tr855969/.conda/envs/env_tf/lib/python3.10/site-packages/batchgenerators/dataloading/nondet_multi_threaded_augmenter.py", line 125, in results_loop
+    raise e
+  File "/user1/ngmm/tr855969/.conda/envs/env_tf/lib/python3.10/site-packages/batchgenerators/dataloading/nondet_multi_threaded_augmenter.py", line 103, in results_loop
+    raise e
+  File "/user1/ngmm/tr855969/.conda/envs/env_tf/lib/python3.10/site-packages/batchgenerators/dataloading/nondet_multi_threaded_augmenter.py", line 103, in results_loop
+    raise RuntimeError("One or more background workers are no longer alive. Exiting. Please check the "
+    raise RuntimeError("One or more background workers are no longer alive. Exiting. Please check the "
+RuntimeError: One or more background workers are no longer alive. Exiting. Please check the print statements above for the actual error message
+RuntimeError: One or more background workers are no longer alive. Exiting. Please check the print statements above for the actual error message
+Ending the shell 
+Starter(279975): Return code=0
+Starter end(279975)

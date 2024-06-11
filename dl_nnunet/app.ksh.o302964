@@ -1,0 +1,33 @@
+REMAINING: 1
+Taking GPU #1
+Starter begin : webern53.u-bourgogne.fr(50113)
+Tue Mar 12 10:48:00 CET 2024
+Version CentOS : 7.7
+Starter(50113): PATH=/usr/ccub/sge/scripts:/tmp3/302964.1.gpu:/user1/ngmm/tr855969/.vscode-server/bin/1e790d77f81672c49be070e04474901747115651/bin/remote-cli:/usr/lib64/qt-3.3/bin:/soft/c7/modules/4.1.2/bin:/usr/ccub/sge-8.1.8/bin:/usr/ccub/sge-8.1.8/bin/lx-amd64:/user1/ngmm/tr855969/bin:/bin:/usr/bin:/usr/sbin:/etc:/usr/ccub/bin:/usr/local/bin:/user1/ngmm/tr855969/bin:.:/opt/dell/srvadmin/bin
+Starter exec(50113) : '/usr/ccub/sge-8.1.8/ccub/spool/webern53/job_scripts/302964'
+Starting my shell script
+usage: conda init [-h] [--all] [--user] [--no-user] [--system] [--reverse] [--json] [-v] [-q] [-d] [SHELLS ...]
+conda init: error: argument SHELLS: invalid choice: 'ksh' (choose from 'bash', 'fish', 'tcsh', 'xonsh', 'zsh', 'powershell')
+
+CommandNotFoundError: Your shell has not been properly configured to use 'conda activate'.
+To initialize your shell, run
+
+    $ conda init <SHELL_NAME>
+
+Currently supported shells are:
+  - bash
+  - fish
+  - tcsh
+  - xonsh
+  - zsh
+  - powershell
+
+See 'conda init --help' for more information and options.
+
+IMPORTANT: You may need to close and restart your shell after running 'conda init'.
+
+
+/usr/ccub/sge-8.1.8/ccub/spool/webern53/job_scripts/302964[43]: nnUNetv2_train: not found
+Ending the shell script_second
+Starter(50113): Return code=0
+Starter end(50113)

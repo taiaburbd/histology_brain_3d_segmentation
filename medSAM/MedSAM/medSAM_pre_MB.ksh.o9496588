@@ -1,0 +1,13 @@
+REMAINING: 1
+Taking GPU #1
+Starter begin : webern54.u-bourgogne.fr(122637)
+Tue May 14 11:04:41 CEST 2024
+Version CentOS : 7.7
+Starter(122637): PATH=/usr/ccub/sge/scripts:/tmp3/9496588.1.gpu:/user1/ngmm/tr855969/.vscode-server/cli/servers/Stable-dc96b837cf6bb4af9cd736aa3af08cf8279f7685/server/bin/remote-cli:/soft/c7/python/3.9/anaconda/2022.05/pytorch/1.11.0/cuda/11.3.1/bin:/usr/lib64/qt-3.3/bin:/soft/c7/modules/4.1.2/bin:/usr/ccub/sge-8.1.8/bin:/usr/ccub/sge-8.1.8/bin/lx-amd64:/user1/ngmm/tr855969/bin:/bin:/usr/bin:/usr/sbin:/etc:/usr/ccub/bin:/usr/local/bin:/user1/ngmm/tr855969/bin:.:/opt/dell/srvadmin/bin
+Starter exec(122637) : '/usr/ccub/sge-8.1.8/ccub/spool/webern54/job_scripts/9496588'
+ori \# files len(names)=12
+after sanity check \# files len(names)=12
+  0%|          | 0/12 [00:00<?, ?it/s]  8%|▊         | 1/12 [11:53<2:10:46, 713.29s/it] 17%|█▋        | 2/12 [22:55<1:53:55, 683.51s/it] 25%|██▌       | 3/12 [36:45<1:52:33, 750.36s/it] 33%|███▎      | 4/12 [49:40<1:41:19, 759.89s/it] 42%|████▏     | 5/12 [1:01:20<1:26:07, 738.18s/it] 50%|█████     | 6/12 [1:14:37<1:15:49, 758.22s/it] 58%|█████▊    | 7/12 [1:26:05<1:01:17, 735.49s/it] 67%|██████▋   | 8/12 [1:37:56<48:29, 727.44s/it]   75%|███████▌  | 9/12 [1:49:42<36:02, 720.91s/it] 83%|████████▎ | 10/12 [2:00:57<23:33, 706.84s/it] 92%|█████████▏| 11/12 [2:11:06<11:16, 676.67s/it]100%|██████████| 12/12 [2:23:41<00:00, 700.51s/it]100%|██████████| 12/12 [2:23:41<00:00, 718.44s/it]
+Ending the shell 
+Starter(122637): Return code=0
+Starter end(122637)

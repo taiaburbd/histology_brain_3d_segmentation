@@ -1,0 +1,29 @@
+REMAINING: 1
+Taking GPU #0
+Starter begin : webern54.u-bourgogne.fr(210356)
+Mon Mar 11 17:10:15 CET 2024
+Version CentOS : 7.7
+Starter(210356): PATH=/usr/ccub/sge/scripts:/tmp3/295048.1.gpu:/user1/ngmm/tr855969/.vscode-server/bin/1e790d77f81672c49be070e04474901747115651/bin/remote-cli:/usr/lib64/qt-3.3/bin:/soft/c7/modules/4.1.2/bin:/usr/ccub/sge-8.1.8/bin:/usr/ccub/sge-8.1.8/bin/lx-amd64:/user1/ngmm/tr855969/bin:/bin:/usr/bin:/usr/sbin:/etc:/usr/ccub/bin:/usr/local/bin:/user1/ngmm/tr855969/bin:.:/opt/dell/srvadmin/bin
+Starter exec(210356) : '/usr/ccub/sge-8.1.8/ccub/spool/webern54/job_scripts/295048'
+
+CommandNotFoundError: Your shell has not been properly configured to use 'conda activate'.
+To initialize your shell, run
+
+    $ conda init <SHELL_NAME>
+
+Currently supported shells are:
+  - bash
+  - fish
+  - tcsh
+  - xonsh
+  - zsh
+  - powershell
+
+See 'conda init --help' for more information and options.
+
+IMPORTANT: You may need to close and restart your shell after running 'conda init'.
+
+
+Failed to activate conda environment. Exiting.
+Starter(210356): Return code=1
+Starter end(210356)
