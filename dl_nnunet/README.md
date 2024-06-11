@@ -72,13 +72,16 @@ conda deactivate
 
 Add custom configurations to your `.kshrc` and `.profilerc` as needed for your development environment.
 
-#### Example `.kshrc`:
+#### add in `.kshrc`:
 
 ```bash
 . /usr/ccub/bin/newprompt
 export COLUMNS=180
 module load 'pytorch/1.11.0/cuda/11.3.1/gpu'
+```
+#### add in `.kshrc`:
 
+```bash
 echo 'Now using bash'
 
 export nnUNet_raw="/user1/ngmm/tr855969/Desktop/Taiabur/ngmm-nnunet/dataset/nnUNet_raw_data"
