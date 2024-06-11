@@ -69,7 +69,7 @@ conda deactivate
 ```
 
 ### 6. Additional Configuration
-
+This configure for the CCUB server
 Add custom configurations to your `.kshrc` and `.profilerc` as needed for your development environment.
 
 #### add in `.kshrc`:
