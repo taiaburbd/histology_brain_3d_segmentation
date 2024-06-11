@@ -79,7 +79,7 @@ Add custom configurations to your `.kshrc` and `.profilerc` as needed for your d
 export COLUMNS=180
 module load 'pytorch/1.11.0/cuda/11.3.1/gpu'
 ```
-#### add in `.kshrc`:
+#### add in `.bashhrc`:
 
 ```bash
 echo 'Now using bash'
