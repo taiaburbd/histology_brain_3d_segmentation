@@ -18,23 +18,24 @@ def dice_score_per_class(segmented, ground_truth, num_classes=N_CLASSES):
     return dice_scores
 
 # Hausdorff Distance (HD)
-def hausdorff_distance_per_class(segmented, ground_truth, num_classes=N_CLASSES):
+def hausdorff_distance_per_class(pred, gt, num_classes):
     hd_per_class = []
-    for class_label in range(num_classes):
-        # if class_label != 1:
-            seg_binary = (segmented == class_label)
-            gt_binary = (ground_truth == class_label)
-            seg_coords = np.array(np.where(seg_binary)).T
-            gt_coords = np.array(np.where(gt_binary)).T
-            if seg_coords.size == 0 or gt_coords.size == 0:
-                hd = 0  # or some appropriate default value
-            else:
-                hd1 = directed_hausdorff(seg_coords, gt_coords)[0]
-                hd2 = directed_hausdorff(gt_coords, seg_coords)[0]
-                hd = max(hd1, hd2)
-            hd_per_class = f"{hd:.4f}"
-            hd_per_class.append(hd)
+
+    for c in range(num_classes):
+        pred_c = (pred == c)
+        gt_c = (gt == c)
+
+        if np.any(pred_c) and np.any(gt_c):
+            pred_coords = np.column_stack(np.where(pred_c))
+            gt_coords = np.column_stack(np.where(gt_c))
+            hd = max(directed_hausdorff(pred_coords, gt_coords)[0], directed_hausdorff(gt_coords, pred_coords)[0])
+        else:
+            hd = np.nan  # Handle empty predictions or ground truth
+
+        hd_per_class.append(hd)
+
     return hd_per_class
+
 
 # Relative Absolute Volume Difference (RAVD)
 def ravd_per_class(segmented, ground_truth, num_classes=N_CLASSES):

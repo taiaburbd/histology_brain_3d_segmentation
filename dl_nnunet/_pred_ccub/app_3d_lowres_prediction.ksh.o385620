@@ -1,0 +1,33 @@
+REMAINING: 1
+Taking GPU #1
+Starter begin : webern50.u-bourgogne.fr(229897)
+Mon Mar 25 15:42:51 CET 2024
+Version CentOS : 7.7
+Starter(229897): PATH=/usr/ccub/sge/scripts:/tmp3/385620.1.gpu:/user1/ngmm/tr855969/.vscode-server/bin/863d2581ecda6849923a2118d93a088b0745d9d6/bin/remote-cli:/usr/lib64/qt-3.3/bin:/soft/c7/modules/4.1.2/bin:/usr/ccub/sge-8.1.8/bin:/usr/ccub/sge-8.1.8/bin/lx-amd64:/user1/ngmm/tr855969/bin:/bin:/usr/bin:/usr/sbin:/etc:/usr/ccub/bin:/usr/local/bin:/user1/ngmm/tr855969/bin:.:/opt/dell/srvadmin/bin
+Starter exec(229897) : '/usr/ccub/sge-8.1.8/ccub/spool/webern50/job_scripts/385620'
+Now using bash
+Starting my shell script
+
+#######################################################################
+Please cite the following paper when using nnU-Net:
+Isensee, F., Jaeger, P. F., Kohl, S. A., Petersen, J., & Maier-Hein, K. H. (2021). nnU-Net: a self-configuring method for deep learning-based biomedical image segmentation. Nature methods, 18(2), 203-211.
+#######################################################################
+
+There are 1 cases in the source folder
+I am process 0 out of 1 (max process ID is 0, we start counting with 0!)
+There are 1 cases that I would like to predict
+Traceback (most recent call last):
+  File "/user1/ngmm/tr855969/.conda/envs/env_tf/bin/nnUNetv2_predict", line 8, in <module>
+    sys.exit(predict_entry_point())
+  File "/beegfs/data/work/shared/ngmm/scripts/Taiabur/ngmm-nnunet/nnUNet/nnunetv2/inference/predict_from_raw_data.py", line 850, in predict_entry_point
+    predictor.predict_from_files(args.i, args.o, save_probabilities=args.save_probabilities,
+  File "/beegfs/data/work/shared/ngmm/scripts/Taiabur/ngmm-nnunet/nnUNet/nnunetv2/inference/predict_from_raw_data.py", line 257, in predict_from_files
+    return self.predict_from_data_iterator(data_iterator, save_probabilities, num_processes_segmentation_export)
+  File "/beegfs/data/work/shared/ngmm/scripts/Taiabur/ngmm-nnunet/nnUNet/nnunetv2/inference/predict_from_raw_data.py", line 350, in predict_from_data_iterator
+    for preprocessed in data_iterator:
+  File "/beegfs/data/work/shared/ngmm/scripts/Taiabur/ngmm-nnunet/nnUNet/nnunetv2/inference/data_iterators.py", line 111, in preprocessing_iterator_fromfiles
+    raise RuntimeError('Background workers died. Look for the error message further up! If there is '
+RuntimeError: Background workers died. Look for the error message further up! If there is none then your RAM was full and the worker was killed by the OS. Use fewer workers or get more RAM in that case!
+Ending the shell script_second
+Starter(229897): Return code=0
+Starter end(229897)

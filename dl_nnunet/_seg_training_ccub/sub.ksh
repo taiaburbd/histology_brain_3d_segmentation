@@ -1,0 +1,1 @@
+bash /user1/ngmm/tr855969/Desktop/Taiabur/ngmm-nnunet/app.sh

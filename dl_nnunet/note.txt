@@ -1,0 +1,25 @@
+1. dataset
+	dataset 1: background removed
+	dataset 2: 24 region segmentatin
+2. train
+	dataset location
+    - /work/shared/ngmm/scripts/Taiabur/ngmm-nnunet/dataset/nnUNet_raw_data
+    train fold
+    
+	nnUNetv2_train 2 2d 0 --npz
+	nnUNetv2_train 2 2d 0 --npz
+	# fold 2
+	nnUNetv2_train 2 2d 1 --npz
+	# fold 3
+	nnUNetv2_train 2 2d 2 --npz
+	# fold 4
+	nnUNetv2_train 2 2d 3 --npz
+	# fold 5
+	nnUNetv2_train 2 2d 4 --npz
+3. predic
+
+
+file:
+.py
+.ksh
+.ipynb

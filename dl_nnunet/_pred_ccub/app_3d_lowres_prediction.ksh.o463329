@@ -1,0 +1,31 @@
+REMAINING: 1
+Taking GPU #0
+Starter begin : webern50.u-bourgogne.fr(169822)
+Thu Apr  4 11:01:25 CEST 2024
+Version CentOS : 7.7
+Starter(169822): PATH=/usr/ccub/sge/scripts:/tmp3/463329.1.gpu:/user1/ngmm/tr855969/.conda/envs/env_tf/bin:/soft/c7/python/3.9/anaconda/2022.05/pytorch/1.11.0/cuda/11.3.1/condabin:/user1/ngmm/tr855969/.vscode-server/bin/863d2581ecda6849923a2118d93a088b0745d9d6/bin/remote-cli:/soft/c7/python/3.9/anaconda/2022.05/pytorch/1.11.0/cuda/11.3.1/bin:/usr/lib64/qt-3.3/bin:/soft/c7/modules/4.1.2/bin:/usr/ccub/sge-8.1.8/bin:/usr/ccub/sge-8.1.8/bin/lx-amd64:/user1/ngmm/tr855969/bin:/bin:/usr/bin:/usr/sbin:/etc:/usr/ccub/bin:/usr/local/bin:/user1/ngmm/tr855969/bin:.:/opt/dell/srvadmin/bin
+Starter exec(169822) : '/usr/ccub/sge-8.1.8/ccub/spool/webern50/job_scripts/463329'
+Now using bash
+Starting my shell script
+
+#######################################################################
+Please cite the following paper when using nnU-Net:
+Isensee, F., Jaeger, P. F., Kohl, S. A., Petersen, J., & Maier-Hein, K. H. (2021). nnU-Net: a self-configuring method for deep learning-based biomedical image segmentation. Nature methods, 18(2), 203-211.
+#######################################################################
+
+There are 1 cases in the source folder
+Traceback (most recent call last):
+  File "/user1/ngmm/tr855969/.conda/envs/env_tf/bin/nnUNetv2_predict", line 8, in <module>
+    sys.exit(predict_entry_point())
+  File "/beegfs/data/work/shared/ngmm/scripts/Taiabur/ngmm-nnunet/nnUNet/nnunetv2/inference/predict_from_raw_data.py", line 850, in predict_entry_point
+    predictor.predict_from_files(args.i, args.o, save_probabilities=args.save_probabilities,
+  File "/beegfs/data/work/shared/ngmm/scripts/Taiabur/ngmm-nnunet/nnUNet/nnunetv2/inference/predict_from_raw_data.py", line 245, in predict_from_files
+    self._manage_input_and_output_lists(list_of_lists_or_source_folder,
+  File "/beegfs/data/work/shared/ngmm/scripts/Taiabur/ngmm-nnunet/nnUNet/nnunetv2/inference/predict_from_raw_data.py", line 170, in _manage_input_and_output_lists
+    caseids = [os.path.basename(i[0])[:-(len(self.dataset_json['file_ending']) + 5)] for i in
+  File "/beegfs/data/work/shared/ngmm/scripts/Taiabur/ngmm-nnunet/nnUNet/nnunetv2/inference/predict_from_raw_data.py", line 170, in <listcomp>
+    caseids = [os.path.basename(i[0])[:-(len(self.dataset_json['file_ending']) + 5)] for i in
+IndexError: list index out of range
+Ending the shell script_second
+Starter(169822): Return code=0
+Starter end(169822)
