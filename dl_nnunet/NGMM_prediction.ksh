@@ -40,28 +40,46 @@ pred_config="3d_lowres"
 # path setup
 
 
-source_file_path="/work/shared/ngmm/3Dimage/DL_test/source_backgroundremoval/30-05-2024/"
-pred ="/work/shared/ngmm/3Dimage/DL_test/pred/30-05-2024/"
+source_file_path="/work/shared/ngmm/3Dimage/DL_test/source_backgroundremoval/13-06-2024/"
+temp_path="${source_file_path}/_temp"
+prediction="${source_file_path}/prediction/"
 
-converted_file_path="${source_file_path}/_temp/VolumeReformat"
-binary_prediction_path="${source_file_path}/_temp/binary"
+converted_file_path="${temp_path}/1.VolumeReformat"
+binary_prediction_path="${temp_path}/2.binary"
+roi_source_file_path="${temp_path}/3.roi"
+roi_seg_file_path="${temp_path}/4.roi_seg"
+prediction_postprocessed="${temp_path}/5.postprocessed"
 
-roi_source_file_path="${source_file_path}/_temp/roi"
-prediction="${source_file_path}/pred"
-prediction_postprocessed="${source_file_path}/_temp/pred"
 
-# format convert
-python NGMM_convert.py --input_path ${source_file_path} --output_path ${converted_file_path}
 
-# # backgound remove
+# File conversion
+python utils/NGMM_convert.py --input_path ${source_file_path} --output_path ${converted_file_path}
+
+echo "Step: 1/7 done"
+# nnUNet prediction for binary segmentation
 nnUNetv2_predict -d ${binary_dataset} -i ${converted_file_path} -o ${binary_prediction_path} -f 0 1 2 3 4 -tr nnUNetTrainer -c ${pred_config} -p nnUNetPlans
 
-python NGMM_sample_generate.py --source_path ${converted_file_path} --binary_path ${binary_prediction_path} --save_path ${roi_source_file_path}
+echo "Step: 2/7 done"
+# Generate ROI samples
+python utils/NGMM_sample_generate.py --source_path ${converted_file_path} --binary_path ${binary_prediction_path} --save_path ${roi_source_file_path}
 
-python NGMM_convert.py --input_path ${roi_source_file_path} --output_path ${roi_source_file_path}
+echo "Step: 3/7 done"
 
-nnUNetv2_predict -d ${roi_seg_dataset} -i ${roi_source_file_path} -o ${prediction} -f  0 1 2 3 4 -tr nnUNetTrainer -c ${pred_config} -p nnUNetPlans
+# Convert ROI for further processing
+python utils/NGMM_convert.py --input_path ${roi_source_file_path} --output_path ${roi_source_file_path}
 
-postprocessing
+echo "Step: 4/7 done"
+# nnUNet prediction for ROI segmentation
+nnUNetv2_predict -d ${roi_seg_dataset} -i ${roi_source_file_path} -o ${roi_seg_file_path} -f  0 1 2 3 4 -tr nnUNetTrainer -c ${pred_config} -p nnUNetPlans
 
-label define
+echo "Step: 5/7 done"
+
+# label define
+python utils/processVolumes.py -i ${roi_seg_file_path} -o ${prediction}
+
+echo "Step: 6/7 done"
+
+# # remove temp file
+python utils/remove_directory.py -i ${temp_path}
+
+echo "Step: 7/7 done"
