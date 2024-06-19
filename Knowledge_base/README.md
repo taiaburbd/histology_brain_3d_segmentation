@@ -1,8 +1,3 @@
-
-# Project Documentation Overview
-
-This repository contains various documentation files for different aspects of the project, including setup, usage, and evaluation of the software and tools. Below is a summary and link to each document.
-
 ## Documentation Files
 
 1. **CCUB Environment Setup**  
