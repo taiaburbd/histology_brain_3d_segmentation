@@ -26,7 +26,7 @@ Set up your SSH configuration to easily connect to the ccub and GPU servers. Edi
 # Configuration for ccub
 Host CCUB
     HostName ssh-ccub.u-bourgogne.fr
-    User tr855969
+    User tr855969 # replace your user UB user name
     IdentityFile ~/.ssh/id_rsa
     ForwardAgent yes
     ForwardX11 yes
@@ -53,6 +53,21 @@ Host GPU
 
 Configure SSH auto-login if required by your workflow. This typically involves setting up SSH keys and adding them to the `ssh-agent`.
 
+a. Access via Terminal to CCUB: 
+
+```bash
+ssh CCUB 
+```
+
+![Alt text](images/example.png)
+
+b. ACCESS via Terminal to GPU:
+after success full login gpu 
+
+
+```bash
+ssh GPU
+```
 ### 5. Create and Manage Conda Environments
 
 Use the following commands to create and activate a new Conda environment:

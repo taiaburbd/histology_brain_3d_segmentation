@@ -1,0 +1,72 @@
+# SSH Login Without Password
+
+This guide provides step-by-step instructions on how to set up SSH login without a password, allowing for secure and convenient access to remote systems.
+
+## Prerequisites
+
+- SSH installed on both the local (client) and remote (server) systems.
+- User accounts on both systems.
+- Access to the command line on both systems.
+
+## Steps
+
+1. **Generate SSH Key Pair on Local Machine**
+
+    On your local machine, open a terminal and run the following command to generate an SSH key pair:
+
+    ```sh
+    ssh-keygen -t rsa -b 2048
+    ```
+
+    This command generates a new RSA key pair with a 2048-bit key size. Follow the prompts to save the key pair in the default location (`~/.ssh/id_rsa`) and optionally set a passphrase.
+
+2. **Copy Public Key to Remote Machine**
+
+    Use the `ssh-copy-id` utility to copy your public key to the remote machine:
+
+    ```sh
+    ssh-copy-id username@remote_host
+    ```
+
+    Replace `username` with your remote username and `remote_host` with the hostname or IP address of the remote machine. You will be prompted to enter the password for the remote user account.
+
+3. **Verify SSH Key Authentication**
+
+    Test the SSH key-based login by connecting to the remote machine:
+
+    ```sh
+    ssh username@remote_host
+    ```
+
+    If everything is set up correctly, you should be able to log in without being prompted for a password.
+
+4. **Troubleshooting**
+
+    - **Permissions Issues**: Ensure that the `.ssh` directory and files on both local and remote machines have correct permissions. Use the following commands:
+
+        ```sh
+        chmod 700 ~/.ssh
+        chmod 600 ~/.ssh/authorized_keys
+        ```
+
+    - **SSH Configuration**: Verify that the SSH configuration file (`/etc/ssh/sshd_config` on the remote machine) allows key-based authentication. The following settings should be enabled:
+
+        ```sh
+        PubkeyAuthentication yes
+        AuthorizedKeysFile .ssh/authorized_keys
+        ```
+
+    After making changes to the SSH configuration file, restart the SSH service:
+
+    ```sh
+    sudo systemctl restart sshd
+    ```
+
+## Conclusion
+
+By following these steps, you can set up SSH login without a password, enhancing security and convenience for remote system management.
+
+## References
+
+- [SSH Manual](https://man.openbsd.org/ssh)
+- [Linux OpenSSH Guide](https://www.openssh.com/manual.html)
