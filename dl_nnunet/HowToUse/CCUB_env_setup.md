@@ -58,8 +58,9 @@ a. Access via Terminal to CCUB:
 ```bash
 ssh CCUB 
 ```
+Without password check [SSH Login Without Password](SSH_Login_without_password.md) 
 
-![Alt text](images/example.png)
+![CCUB login](images/login_ccub.png)
 
 b. ACCESS via Terminal to GPU:
 after success full login gpu 
